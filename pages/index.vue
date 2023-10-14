@@ -22,7 +22,8 @@
     <section class="w-full bg-dark py-12 px-4">
         <h2 class="text-white text-center mb-4 text-5xl">Our Server Configuration</h2>
         <p class="text-center text-white mb-3">Here is the configuration that we use for our server. <br> Feel free to read all. It may come handy</p>
-        <div class="max-w-2xl m-autopx-4 text-white m-auto config">
+        <p class="text-center text-3xl link text-white">Under development!</p>
+        <!-- <div class="max-w-2xl m-autopx-4 text-white m-auto config">
             <p class="p-3 py-4 rounded-lg bg-dark-100 mb-4">Automatic Team Authorization on TC and Traps</p>
             <p class="p-3 py-4 rounded-lg bg-dark-100 mb-4">SAMSites ignore Owner and Teamates</p>
             <p class="p-3 py-4 rounded-lg bg-dark-100 mb-4">Always Daytime with clear weather in Game. Without Harsh Sun Glare</p>
@@ -48,11 +49,11 @@
             <p class="p-3 py-4 rounded-lg bg-dark-100 mb-4">Teleportation to a player (20 daily limit) <code>/tpr player_name</code></p>
             <p class="p-3 py-4 rounded-lg bg-dark-100 mb-4">All Teleportations with 30 seconds countdown</p>
             <p class="p-3 py-4 rounded-lg bg-dark-100 mb-4">Instant Untie items / boxes under water</p>
-        </div>
+        </div> -->
     </section>
 
 
-    <section class="w-full bg-dark py-12 px-4">
+    <!-- <section class="w-full bg-dark py-12 px-4">
         <h2 class="text-main text-center mb-4 text-5xl">Elite Rank Abilities</h2>
         <p class="text-center text-white mb-3">Here is the list of abilities available for the <br> Elite ranked players. Your donations are highly appriciated</p>
         <div class="max-w-2xl m-autopx-4 text-white m-auto config">
@@ -70,7 +71,7 @@
             <p class="p-3 py-4 rounded-lg bg-dark-100 mb-4">Sign Artist Access to set images on frames or board <code>/sil url</code></p>
             <p class="p-3 py-4 rounded-lg bg-dark-100 mb-4">Personal Attack Helicopter Call <code>/callheli</code></p>
         </div>
-    </section>
+    </section> -->
     
 </template>
 

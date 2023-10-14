@@ -22,7 +22,7 @@
     </section>
 </template>
 
-<script script>
+<script setup>
     useSeoMeta({
         title: "Rules — Rusty Uranium",
         ogTitle: 'Rules — Rusty Uranium',
