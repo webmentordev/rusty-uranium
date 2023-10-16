@@ -7,6 +7,12 @@ export default defineNuxtConfig({
     'nuxt-gtag',
     'nuxt-simple-sitemap'
   ],
+  runtimeConfig: {
+    "api": process.env.API,
+    public: {
+      "api": process.env.API
+    }
+  },
   gtag: {
     id: process.env.ANALYTICSKEY
   },

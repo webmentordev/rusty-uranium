@@ -16,5 +16,8 @@
     "nuxt-gtag": "^1.1.1",
     "nuxt-icon": "^0.4.2",
     "nuxt-simple-sitemap": "^3.4.0"
+  },
+  "dependencies": {
+    "pocketbase": "^0.18.3"
   }
 }
