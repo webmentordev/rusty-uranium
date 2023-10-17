@@ -47,5 +47,5 @@ h3 {
     @apply flex items-center
 }
 .config code{
-    @apply py-1 px-3 bg-main text-black ml-3 font-semibold rounded-md;
+    @apply py-2 inline-block px-3 bg-main text-black text-sm mr-1 font-semibold rounded-md;
 }

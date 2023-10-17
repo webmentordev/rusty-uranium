@@ -10,10 +10,10 @@
             <div class="relative z-10 max-w-3xl m-auto px-4">
                 <div class="mt-5 mb-5 p-6 rounded-lg bg-dark text-white/90">
                     <p class="mb-6">Compliance with the mentioned rules is imperative, and it is crucial to be aware that some offenses cannot be appealed. Therefore, it is important to exercise caution and attentiveness to ensure adherence to the rules.</p>
-                    <ul class="rules" v-if="rules.length">
+                    <p v-if="pending" class="text-center py-12 px-3">Loading...</p>
+                    <ul class="rules" v-else>
                         <li v-for="(rule, index) in rules">{{ rule.rule }} <span v-if="rule.duration" class="text-main font-semibold">({{ rule.duration }})</span></li>
                     </ul>
-                    <p v-else class="text-center py-12 px-3">Loading...</p>
                 </div>
             </div>
         </div>
@@ -29,15 +29,7 @@
         ogImage: 'https://cdn.discordapp.com/attachments/1056300434018533407/1159794390961750036/rusty_meta-Image.webp',
         twitterCard: 'summary_large_image',
     });
-
     const rules = ref([]);
-    const nuxtApp = useNuxtApp();
-    onMounted(async () => {
-        let array = await nuxtApp.$pb.collection('rules').getFullList();
-        rules.value = array;
-    })
-
-    onUnmounted(async () => {
-        await nuxtApp.$pb.collection('rules').unsubscribe('*');
-    })
+    let { data, pending } = await useFetch('/api/rules');
+    rules.value = data.value;
 </script>
