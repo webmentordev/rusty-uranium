@@ -16,7 +16,7 @@
                 </div>
                 <div class="p-3 bg-dark-100 mt-3 rounded-lg mb-3">
                     <h2 class="text-2xl text-main mb-2">RP Wipe Schedule</h2>
-                    <p class="text-white p-3 bg-dark rounded-md"><span class="text-main font-semibold">2 Months</span> — Every 2 Months</p>
+                    <p class="text-white p-3 bg-dark rounded-md"><span class="text-main font-semibold">{{ wipe }}</span> — Every 2 Months</p>
                 </div>
             </div>
         </div>
@@ -33,4 +33,7 @@
         ogImage: 'https://cdn.discordapp.com/attachments/1056300434018533407/1159794390961750036/rusty_meta-Image.webp',
         twitterCard: 'summary_large_image',
     });
+    const wipe = ref("");
+    let { data, pending } = await useFetch('/api/wipe');
+    wipe.value = data.value[0].rp_wipe;
 </script>
