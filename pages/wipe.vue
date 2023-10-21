@@ -34,6 +34,6 @@
         twitterCard: 'summary_large_image',
     });
     const wipe = ref("");
-    let { data, pending } = await useFetch('/api/wipe');
+    let { data } = await useFetch('/api/wipe');
     wipe.value = data.value[0].rp_wipe;
 </script>

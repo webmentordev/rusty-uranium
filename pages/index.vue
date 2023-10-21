@@ -28,8 +28,10 @@
             <div v-else class="max-w-2xl m-autopx-4 text-white m-auto config">
                 <div class="p-3 py-4 rounded-lg bg-dark-100 mb-4" v-for="(config, index) in configs">
                     <p class="w-full mb-2 p-3 bg-dark rounded-lg">{{ config.config }}</p>
-                    <div class="flex items-center" v-if="config.commands.length">
-                        <code v-for="command in config.commands">{{ command.command }}</code>
+                    <div v-if="config.commands">
+                        <div class="flex items-center" v-if="config.commands.length">
+                            <code v-for="command in config.commands">{{ command.command }}</code>
+                        </div>
                     </div>
                 </div>
             </div>
