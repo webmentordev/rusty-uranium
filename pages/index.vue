@@ -26,6 +26,13 @@
             <p v-if="pending" class="text-center link text-white">Loading...</p>
 
             <div v-else class="max-w-2xl m-autopx-4 text-white m-auto config">
+                <input type="text" class="bg-dark-100 border-white/10 border p-3 w-full mb-3 rounded-lg" placeholder="Search..." v-model="search" @input="findconfig">
+
+                <div class="flex items-center mb-3">
+                    <button class="w-full py-2 rounded-xl px-4 mr-3 border-main bg-main/10 border" @click="fetchAllConfigs">With All Configs</button>
+                    <button class="w-full py-2 rounded-xl px-4 border-main bg-main/10 border" @click="fetchCommands">With Commands Only</button>
+                </div>
+
                 <div class="p-3 py-4 rounded-lg bg-dark-100 mb-4" v-for="(config, index) in configs">
                     <p class="w-full p-3 bg-dark rounded-lg">{{ config.config }}</p>
                     <div class="mt-2" v-if="config.commands">
@@ -65,9 +72,30 @@
         twitterCard: 'summary_large_image',
     });
     const configs = ref(null);
+    const search = ref("");
+    const array_config = ref(null);
     const elites = ref(null);
     let { data, pending } = await useFetch('/api/configs');
     configs.value = data.value.array;
+    array_config.value = data.value.array;
     elites.value = data.value.elite;
+
+    function findconfig(){
+        configs.value = array_config.value.filter(item =>
+            item.config.toLowerCase().includes(search.value.toLowerCase())
+        );
+    }
+
+    function fetchCommands(){
+        configs.value = array_config.value.filter((element) => {
+            if(element.commands){
+                return element;
+            }
+        });
+    }
+
+    function fetchAllConfigs(){
+        configs.value = array_config.value;
+    }
 
 </script>
